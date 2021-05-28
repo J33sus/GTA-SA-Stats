@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>GTASA Stats</title>
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./images/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+	<meta name="description" content="GTA SA Stats">
+	<meta name="keywords" content="html, css, gta, san andreas, stats, web">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="GTA SA Stats">
+	<style>
+		body {
+			background: rgb(71, 71, 71);
+		}
+	</style>
+	<link rel="stylesheet" href="./css/normalize.min.css">
+	<link rel="stylesheet" href="./css/styles.min.css">
+</head>
+<body>
+	<div class="page-container">
+		<h1 class="page-title">GTASA Stats</h1>
+		<p class="page-info">Stats size; self-scalable</p>
+		<label for="pageInputRange">
+			<input class="page-input" type="range" min="8" max="32" value="16" id="pageInputRange">
+		</label>
+	</div>
+
+	<div class="gtasa-stats--container">
+		<div class="gtasa-stats--box">
+			<h2 class="gtasa-stats-title">Stats</h2>
+			<section class="gtasa-stats--bars">
+				<section class="gtasa-stats-bar">
+					<p class="gtasa-stats-bar--title">Respect</p>
+					<div class="gtasa-stats-bar--progress">
+						<div style="width: 30%;"></div>
+					</div>
+				</section>
+
+				<section class="gtasa-stats-bar">
+					<p class="gtasa-stats-bar--title">Stamina</p>
+					<div class="gtasa-stats-bar--progress">
+						<div style="width: 20%;"></div>
+					</div>
+				</section>
+
+				<section class="gtasa-stats-bar">
+					<p class="gtasa-stats-bar--title">Muscle</p>
+					<div class="gtasa-stats-bar--progress">
+						<div style="width: 60%;"></div>
+					</div>
+				</section>
+
+				<section class="gtasa-stats-bar">
+					<p class="gtasa-stats-bar--title">Fat</p>
+					<div class="gtasa-stats-bar--progress">
+						<div style="width: 40%;"></div>
+					</div>
+				</section>
+
+				<section class="gtasa-stats-bar">
+					<p class="gtasa-stats-bar--title">Sex appeal</p>
+					<div class="gtasa-stats-bar--progress">
+						<div style="width: 80%;"></div>
+					</div>
+				</section>
+			</section>
+		</div>
+	</div>
+
+	<script>
+		window.addEventListener('load', function(event) {
+			let pageInput = document.getElementsByClassName('page-input');
+			pageInput[0].addEventListener('input', function() {
+				let containerStats = document.getElementsByClassName('gtasa-stats--container');
+				if(containerStats) containerStats[0].style.fontSize = `${this.value}px`;
+			});
+		});	
+	</script>
+</body>
+</html>
